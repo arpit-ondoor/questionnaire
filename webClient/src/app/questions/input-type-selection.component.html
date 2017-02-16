@@ -1,0 +1,4 @@
+    <select (change)="change($event.target)">
+
+        <option *ngFor="let opt of options"  [value]="[opt.key,opt.id]">{{opt.value}}</option>
+    </select>

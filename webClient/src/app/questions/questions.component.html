@@ -1,0 +1,20 @@
+<div [formGroup]="form">
+    <template [ngIf]="form.controls.questions">
+        <div formArrayName="questions" style="margin-top: 60px;margin-left: 20px; ">
+            <div *ngFor="let question of form.controls.questions.controls; let i=index" class="panel panel-default">
+                <div class="panel-heading">
+                    <span>
+                        <template [ngIf]="question.controls['isChild'].value">
+                            Sub 
+                        </template>
+                        Question
+                        {{i + 1}}
+                    </span>
+                </div>
+                <div class="panel-body" [formGroupName]="i">
+                <question-options [options]="options" [group]="form.controls.questions.controls[i]"></question-options>
+                </div>
+            </div>
+        </div>
+    </template>
+</div>

@@ -1,0 +1,19 @@
+<div [formGroup]="questionForm">
+    <div class="form-group col-xs-6">
+        <label style="position: relative;top: 33px;margin-left: -15px; ">Q </label>
+        <input type="text" class="form-control" formControlName="name">
+        <small [hidden]="questionForm.controls.name.valid" class="text-danger">
+            Question Text is required
+        </small>
+    </div>
+    <div class="form-group col-xs-6" style="position: relative;top: 32px;">
+    <df-question-its [options]="options" (onChange)="onChange($event);"></df-question-its>
+    </div>
+    <div formArrayName="options" class="col-xs-12">
+        <div *ngFor="let option of questionForm.controls.options.controls; let i=index">
+            <div  [formGroupName]="i">
+                <option-choice [isChild]="questionForm.value.isChild" [options]="options" [type]="questionForm.value.type" [group]="questionForm.controls.options.controls[i]"></option-choice>
+            </div>
+        </div>
+    </div>
+</div>

@@ -1,0 +1,22 @@
+<div class="form-group col-xs-12" [formGroup]="optionForm">
+    <div class="form-group col-xs-6" style="margin-top: -28px;">
+        <label style="position: relative;top: 33px;margin-left: -15px; ">-></label>
+        <template [ngIf]="type=='singlechoice' ||type=='multiplechoice' ">
+            <input  type="text" class="form-control" formControlName="name">
+        </template>
+        <template [ngIf]="type=='multilinetext'" >
+            <textarea  class="form-control" formControlName="name"></textarea>
+        </template>
+        <small [hidden]="optionForm.controls.name.valid" class="text-danger">
+            Option text is required
+        </small>
+    </div>
+    <template [ngIf]="!hasChild && !isChild && (type=='singlechoice' ||type=='multiplechoice') ">
+        <div class="form-group col-xs-2">
+            <button (click)="addSubQuestion()">Add Sub Question</button>
+        </div>
+    </template>
+    <template [ngIf]="optionForm.controls.questions">
+        <questions [options]="options" [group]="optionForm"></questions>
+    </template>
+</div>
