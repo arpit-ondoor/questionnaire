@@ -14,7 +14,7 @@ Prerequisites:
 - install angular-cli
 ```bash
 npm install -g @angular/cli
-
+```
 # Installation
 
 **BEFORE YOU INSTALL:** please read the [prerequisites](#prerequisites)
