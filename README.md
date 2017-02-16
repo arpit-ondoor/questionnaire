@@ -28,6 +28,7 @@ npm install -g @angular/cli
     * java -jar [PARENT_MODULE]/server/target/questionnaire.war
 4. launch the webpack server for the frontend
     * cd [PARENT_MODULE]/webClient
+    * npm install
     * ng serve
 5. go on http://localhost:4200
 
