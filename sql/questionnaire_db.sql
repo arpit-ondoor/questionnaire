@@ -18,6 +18,10 @@
 --
 -- Table structure for table `input_types`
 --
+DROP DATABASE IF EXISTS `questionnaire`;
+CREATE DATABASE `questionnaire`;
+
+USE `questionnaire`;
 
 DROP TABLE IF EXISTS `input_types`;
 /*!40101 SET @saved_cs_client     = @@character_set_client */;
